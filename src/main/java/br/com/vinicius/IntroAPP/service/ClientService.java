@@ -14,27 +14,34 @@ public class ClientService {
     @Autowired
     private ClientRepository repository;
 
-    public Optional<ClientModel> findById(long id){
+    public Optional<ClientModel> findById(long id) {
         return repository.findById(id);
     }
 
-    public List<ClientModel> findAll(){
+    public List<ClientModel> findAll() {
         return repository.findAll();
     }
 
-    public ClientModel save(ClientModel model){
+    public ClientModel save(ClientModel model) {
         return repository.save(model);
     }
 
-    public ClientModel update(ClientModel model){
+    public ClientModel update(ClientModel model) {
         var found = repository.findById(model.getId());
-        if(found.isPresent()){
+        if (found.isPresent()) {
             found.get().setName(model.getName());
             found.get().setGender(model.getGender());
             found.get().setCity(model.getCity());
             return repository.save(found.get());
-        }else {
+        } else {
             return null;
+        }
+    }
+
+    public void delete(long id) {
+        var found = repository.findById(id);
+        if (found.isPresent()) {
+            repository.delete(found.get());
         }
     }
 }
