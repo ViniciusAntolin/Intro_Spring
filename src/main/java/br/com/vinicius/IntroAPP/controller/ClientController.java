@@ -3,10 +3,7 @@ package br.com.vinicius.IntroAPP.controller;
 import br.com.vinicius.IntroAPP.model.ClientModel;
 import br.com.vinicius.IntroAPP.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-<<<<<<< HEAD
 import org.springframework.http.ResponseEntity;
-=======
->>>>>>> 7c7c4ab3eb2b612ec5ff45a7547d56ceefac0b1a
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
