@@ -14,4 +14,7 @@ public interface ClientRepository extends JpaRepository<ClientModel, Long>{
     Optional<ClientModel>findById(long id);
 
     List<ClientModel> findByNameContainsIgnoreCaseOrderByName(Spring name);
+
+    //New methods of V2
+    List<ClientModel> findByEmailStartsWithIgnoreCase(String email);
 }

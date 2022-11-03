@@ -1,0 +1,10 @@
+insert into professions (name) values ('Teacher');
+insert into professions (name) values ('Analyst Programmer');
+insert into professions (name) values ('VP Quality Control');
+insert into professions (name) values ('Budget/Accounting Analyst II');
+insert into professions (name) values ('Business Systems Development Analyst');
+insert into professions (name) values ('Budget/Accounting Analyst III');
+insert into professions (name) values ('Programmer III');
+insert into professions (name) values ('Electrical Engineer');
+insert into professions (name) values ('Compensation Analyst');
+insert into professions (name) values ('Assistant Media Planner');

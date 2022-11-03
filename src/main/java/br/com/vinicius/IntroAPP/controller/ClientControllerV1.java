@@ -1,7 +1,7 @@
 package br.com.vinicius.IntroAPP.controller;
 
 import br.com.vinicius.IntroAPP.model.ClientModel;
-import br.com.vinicius.IntroAPP.service.ClientService;
+import br.com.vinicius.IntroAPP.service.ClientServiceV1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/clients")
-public class ClientController {
+@RequestMapping("/clients/v1")
+public class ClientControllerV1 {
 
     @Autowired
-    private ClientService service;
+    private ClientServiceV1 service;
 
     @GetMapping("/{id}")
     public Optional<ClientModel> findById(@PathVariable("id") long id) {
