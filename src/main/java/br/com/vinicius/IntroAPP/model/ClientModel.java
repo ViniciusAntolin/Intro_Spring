@@ -1,24 +1,24 @@
 package br.com.vinicius.IntroAPP.model;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "clients")
-@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ClientModel extends RepresentationModel {
 
-public class ClientModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter
+    @Setter @Getter
     @ApiModelProperty(notes = "The ID")
     private long id;
 
     @Column(name = "name", nullable = false, length = 50)
-    @Getter @Setter
+    @Setter @Getter
     @ApiModelProperty(notes = "The client's  full name")
     private String name;
 
@@ -32,7 +32,7 @@ public class ClientModel {
     @ApiModelProperty(notes = "The city of the client")
     private String city;
 
-    //Attributes V2
+    //..new attributes of V2
     @Column(nullable = true, length = 100)
     @Getter @Setter
     @ApiModelProperty(notes = "A valid email address")
@@ -41,8 +41,7 @@ public class ClientModel {
     //..relationship with ProfessionModel
     @ManyToOne
     @JoinColumn(name = "profession_id")
-    @Getter @Setter
+    @Setter @Getter
     private ProfessionModel profession;
-
 
 }
